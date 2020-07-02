@@ -22,30 +22,30 @@ const mapDispatchToProps = dispatch => {
 };
 
 const UpdateEmployee = (props) => {
-    const { id, name, organisationId, supervisorId, messageResponse, updateEmployee } = props;
+    const { id, name, organisationName, supervisorName, messageResponse, updateEmployee } = props;
 
     const [nameValue, setNameValue] = React.useState(name);
-    const [organisationIdValue, setOrganisationIdValue] = React.useState(organisationId);
-    const [supervisorIdValue, setSupervisorIdValue] = React.useState(supervisorId);
+    const [organisationNameValue, setOrganisationNameValue] = React.useState(organisationName);
+    const [supervisorNameValue, setSupervisorNameValue] = React.useState(supervisorName);
     const classes = useDefaultStyles();
 
     const handleName = (event) => {
         setNameValue(event.target.value);
     };
 
-    const handleOrganisationId = (event) => {
-        setOrganisationIdValue(event.target.value);
+    const handleOrganisationName = (event) => {
+        setOrganisationNameValue(event.target.value);
     };
 
-    const handleSupervisorId = (event) => {
-        setSupervisorIdValue(event.target.value);
+    const handleSupervisorName = (event) => {
+        setSupervisorNameValue(event.target.value);
     };
 
     const handleUpdateButton = () => {
         updateEmployee(id, {
             name: nameValue,
-            organisationId: organisationIdValue,
-            supervisorId: supervisorIdValue
+            organisationName: organisationNameValue,
+            supervisorName: supervisorNameValue
         });
     };
 
@@ -68,24 +68,25 @@ const UpdateEmployee = (props) => {
                                        value={nameValue ? nameValue : ''}
                                        variant="outlined"
                                        fullWidth
+                                       required
                             />
                         </Grid>
                         <Grid item>
-                            <TextField id="organisationId"
-                                       label="Id организации"
+                            <TextField id="organisationName"
+                                       label="Название организации"
                                        type="text"
-                                       onChange={handleOrganisationId}
-                                       value={organisationIdValue ? organisationIdValue : ''}
+                                       onChange={handleOrganisationName}
+                                       value={organisationNameValue ? organisationNameValue : ''}
                                        variant="outlined"
                                        fullWidth
                             />
                         </Grid>
                         <Grid item>
-                            <TextField id="supervisorId"
-                                       label="Id руководителя"
+                            <TextField id="supervisorName"
+                                       label="Имя руководителя"
                                        type="text"
-                                       onChange={handleSupervisorId}
-                                       defaultValue={supervisorIdValue ? supervisorIdValue : ''}
+                                       onChange={handleSupervisorName}
+                                       defaultValue={supervisorNameValue ? supervisorNameValue : ''}
                                        variant="outlined"
                                        fullWidth
                             />

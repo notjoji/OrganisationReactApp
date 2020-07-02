@@ -61,7 +61,8 @@ const OrganisationsList = (props) => {
         setUpdateData({
             id: data.id,
             name: data.name,
-            baseId: data.baseId
+            baseName: data.baseName,
+            supervisorName: data.supervisorName
         });
         setCurrentView(UPDATE_VIEW);
     };
@@ -92,14 +93,15 @@ const OrganisationsList = (props) => {
 
     let tableData = organisations
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-        .map(({id, name, baseId}) => (
+        .map(({id, name, baseName, supervisorName}) => (
             <TableRow key={id}>
                 <TableCell>{id}</TableCell>
                 <TableCell align="center">{name}</TableCell>
-                <TableCell align="center">{baseId}</TableCell>
+                <TableCell align="center">{baseName}</TableCell>
+                <TableCell align="center">{supervisorName}</TableCell>
                 <TableCell align="center">
                     <Button id={id} variant="contained" color="default"
-                            onClick={() => handleUpdateButton({id, name, baseId})}>
+                            onClick={() => handleUpdateButton({id, name, baseName, supervisorName})}>
                         Изменить
                     </Button>
                 </TableCell>
@@ -123,7 +125,8 @@ const OrganisationsList = (props) => {
                             <TableRow>
                                 <StyledTableCell>Id организации</StyledTableCell>
                                 <StyledTableCell align="center">Название организации</StyledTableCell>
-                                <StyledTableCell align="center">Id головной организации</StyledTableCell>
+                                <StyledTableCell align="center">Название головной организации</StyledTableCell>
+                                <StyledTableCell align="center">Имя руководителя</StyledTableCell>
                                 <StyledTableCell align="center">Изменить</StyledTableCell>
                                 <StyledTableCell align="center">Удалить</StyledTableCell>
                             </TableRow>
@@ -179,7 +182,8 @@ const OrganisationsList = (props) => {
         currentView === UPDATE_VIEW ?
             <UpdateOrganisation id={updateData.id}
                             name={updateData.name}
-                            baseId={updateData.baseId}/> :
+                            baseName={updateData.baseName}
+                            supervisorName={updateData.supervisorName}/> :
             <AddOrganisation/>;
 
     return (

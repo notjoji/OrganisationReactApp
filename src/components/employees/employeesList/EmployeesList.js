@@ -23,9 +23,9 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogActions from "@material-ui/core/DialogActions";
 
 const mapStateToProps = state => {
-    const {isLoading, employees, messageResponse} = state.employees;
+    const {isEmployeesLoading, employees, messageResponse} = state.employees;
     return {
-        isLoading, employees, messageResponse
+        isEmployeesLoading, employees, messageResponse
     }
 };
 
@@ -49,7 +49,7 @@ const UPDATE_VIEW = 'UPDATE_VIEW';
 const CREATE_VIEW = 'CREATE_VIEW';
 
 const EmployeesList = (props) => {
-    const {isLoading, employees, messageResponse, loadEmployees, deleteEmployee, resetMessageResponse} = props;
+    const {isEmployeesLoading, employees, messageResponse, loadEmployees, deleteEmployee, resetMessageResponse} = props;
 
     const [employeesData, setEmployeesData] = React.useState(() => loadEmployees());
     const [page, setPage] = React.useState(0);
@@ -63,8 +63,8 @@ const EmployeesList = (props) => {
         setUpdateData({
             id: data.id,
             name: data.name,
-            organisationId: data.organisationId,
-            supervisorId: data.supervisorId
+            organisationName: data.organisationName,
+            supervisorName: data.supervisorName
         });
         setCurrentView(UPDATE_VIEW);
     };
@@ -95,15 +95,15 @@ const EmployeesList = (props) => {
 
     let tableData = employees
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-        .map(({id, name, organisationId, supervisorId}) => (
+        .map(({id, name, organisationName, supervisorName}) => (
         <TableRow key={id}>
             <TableCell>{id}</TableCell>
             <TableCell align="center">{name}</TableCell>
-            <TableCell align="center">{organisationId}</TableCell>
-            <TableCell align="center">{supervisorId}</TableCell>
+            <TableCell align="center">{organisationName}</TableCell>
+            <TableCell align="center">{supervisorName}</TableCell>
             <TableCell align="center">
                 <Button id={id} variant="contained" color="default"
-                        onClick={() => handleUpdateButton({id, name, organisationId, supervisorId})}>
+                        onClick={() => handleUpdateButton({id, name, organisationName, supervisorName})}>
                     Изменить
                 </Button>
             </TableCell>
@@ -116,7 +116,7 @@ const EmployeesList = (props) => {
         </TableRow>
     ));
 
-    let content = isLoading ?
+    let content = isEmployeesLoading ?
         <h1>Loading...</h1> :
         employees && employees.length !== 0 ?
         <>
@@ -127,8 +127,8 @@ const EmployeesList = (props) => {
                             <TableRow>
                                 <StyledTableCell>Id сотрудника</StyledTableCell>
                                 <StyledTableCell align="center">Имя сотрудника</StyledTableCell>
-                                <StyledTableCell align="center">Id организации</StyledTableCell>
-                                <StyledTableCell align="center">Id руководителя</StyledTableCell>
+                                <StyledTableCell align="center">Название организации</StyledTableCell>
+                                <StyledTableCell align="center">Имя руководителя</StyledTableCell>
                                 <StyledTableCell align="center">Изменить</StyledTableCell>
                                 <StyledTableCell align="center">Удалить</StyledTableCell>
                             </TableRow>
@@ -184,8 +184,8 @@ const EmployeesList = (props) => {
         currentView === UPDATE_VIEW ?
             <UpdateEmployee id={updateData.id}
                             name={updateData.name}
-                            organisationId={updateData.organisationId}
-                            supervisorId={updateData.supervisorId}/> :
+                            organisationName={updateData.organisationName}
+                            supervisorName={updateData.supervisorName}/> :
             <AddEmployee/>;
 
     return (

@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9478c590-d60e-4361-9a26-a6abdec0effb" name="Default Changelist" comment="" />
+    <list default="true" id="9478c590-d60e-4361-9a26-a6abdec0effb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/employees/employeesList/AddEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/employees/employeesList/AddEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/employees/employeesList/EmployeesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/employees/employeesList/EmployeesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/employees/employeesList/UpdateEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/employees/employeesList/UpdateEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/employees/employeesTree/EmployeesTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/employees/employeesTree/EmployeesTree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisatons/organisationsList/AddOrganisation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisatons/organisationsList/AddOrganisation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisatons/organisationsList/OrganisationsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisatons/organisationsList/OrganisationsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisatons/organisationsList/UpdateOrganisation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisatons/organisationsList/UpdateOrganisation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisatons/organisationsTree/OrganisatonsTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisatons/organisationsTree/OrganisatonsTree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/EmployeeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EmployeeService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/OrganisationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OrganisationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/employees/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/employees/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/employees/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/employees/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/employees/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/employees/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/organisations/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/organisations/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/organisations/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/organisations/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/organisations/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/organisations/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +39,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1dJBbrjOmUvbRq49zeHVe9w9vcF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -91,10 +119,22 @@
       <workItem from="1593493324758" duration="13047000" />
       <workItem from="1593510579432" duration="9623000" />
       <workItem from="1593584626542" duration="31379000" />
+      <workItem from="1593691359317" duration="16900000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

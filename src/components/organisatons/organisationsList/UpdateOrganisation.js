@@ -22,24 +22,30 @@ const mapDispatchToProps = dispatch => {
 };
 
 const UpdateOrganisation = (props) => {
-    const { id, name, baseId, messageResponse, updateOrganisation } = props;
+    const { id, name, baseName, supervisorName, messageResponse, updateOrganisation } = props;
 
     const [nameValue, setNameValue] = React.useState(name);
-    const [baseIdValue, setBaseIdValue] = React.useState(baseId);
+    const [baseNameValue, setBaseNameValue] = React.useState(baseName);
+    const [supervisorNameValue, setSupervisorNameValue] = React.useState(supervisorName);
     const classes = useDefaultStyles();
 
     const handleName = (event) => {
         setNameValue(event.target.value);
     };
 
-    const handleBaseId = (event) => {
-        setBaseIdValue(event.target.value);
+    const handleBaseName = (event) => {
+        setBaseNameValue(event.target.value);
+    };
+
+    const handleSupervisorName = (event) => {
+        setSupervisorNameValue(event.target.value);
     };
 
     const handleUpdateButton = () => {
         updateOrganisation(id, {
             name: nameValue,
-            baseId: baseIdValue,
+            baseName: baseNameValue,
+            supervisorName: supervisorNameValue
         });
     };
 
@@ -62,14 +68,25 @@ const UpdateOrganisation = (props) => {
                                        value={nameValue ? nameValue : ''}
                                        variant="outlined"
                                        fullWidth
+                                       required
                             />
                         </Grid>
                         <Grid item>
-                            <TextField id="baseId"
-                                       label="Id головной организации"
+                            <TextField id="baseName"
+                                       label="Название головной организации"
                                        type="text"
-                                       onChange={handleBaseId}
-                                       value={baseIdValue ? baseIdValue : ''}
+                                       onChange={handleBaseName}
+                                       value={baseNameValue ? baseNameValue : ''}
+                                       variant="outlined"
+                                       fullWidth
+                            />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="supervisorName"
+                                       label="Имя сотрудника"
+                                       type="text"
+                                       onChange={handleSupervisorName}
+                                       value={supervisorNameValue ? supervisorNameValue : ''}
                                        variant="outlined"
                                        fullWidth
                             />
