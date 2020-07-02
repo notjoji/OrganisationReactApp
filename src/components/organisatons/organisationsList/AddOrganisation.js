@@ -25,21 +25,27 @@ const AddOrganisation = (props) => {
     const { messageResponse, addOrganisation } = props;
 
     const [nameValue, setNameValue] = React.useState("");
-    const [baseIdValue, setBaseIdValue] = React.useState("");
+    const [baseNameValue, setBaseNameValue] = React.useState("");
+    const [supervisorNameValue, setSupervisorNameValue] = React.useState("");
     const classes = useDefaultStyles();
 
     const handleName = (event) => {
         setNameValue(event.target.value);
     };
 
-    const handleBaseId = (event) => {
-        setBaseIdValue(event.target.value);
+    const handleBaseName = (event) => {
+        setBaseNameValue(event.target.value);
+    };
+
+    const handleSupervisorName = (event) => {
+        setSupervisorNameValue(event.target.value);
     };
 
     const handleCreateButton = () => {
         addOrganisation({
             name: nameValue,
-            baseId: baseIdValue,
+            baseName: baseNameValue,
+            supervisorName: supervisorNameValue
         });
     };
 
@@ -59,14 +65,25 @@ const AddOrganisation = (props) => {
                                        value={nameValue}
                                        variant="outlined"
                                        fullWidth
+                                       required
                             />
                         </Grid>
                         <Grid item>
-                            <TextField id="baseId"
-                                       label="Id головной организации"
+                            <TextField id="baseName"
+                                       label="Название головной организации"
                                        type="text"
-                                       onChange={handleBaseId}
-                                       value={baseIdValue}
+                                       onChange={handleBaseName}
+                                       value={baseNameValue}
+                                       variant="outlined"
+                                       fullWidth
+                            />
+                        </Grid>
+                        <Grid item>
+                            <TextField id="supervisorName"
+                                       label="Имя руководителя"
+                                       type="text"
+                                       onChange={handleSupervisorName}
+                                       value={supervisorNameValue}
                                        variant="outlined"
                                        fullWidth
                             />

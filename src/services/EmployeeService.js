@@ -15,7 +15,11 @@ class EmployeeService {
 
     deleteEmployeeById = async (id) => {
         return await apiEmployees.delete(`/delete/${id}`);
-    }
+    };
+
+    getEmployeesTree = async (id) => {
+        return await apiEmployees.get(`/tree/${id}`);
+    };
 }
 
 export default new EmployeeService();

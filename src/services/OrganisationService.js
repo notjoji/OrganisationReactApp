@@ -15,7 +15,11 @@ class OrganisationService {
 
     deleteOrganisationById = async (id) => {
         return await apiOrganisations.delete(`/delete/${id}`);
-    }
+    };
+
+    getOrganisationsTree = async () => {
+        return await apiOrganisations.get('/tree');
+    };
 }
 
 export default new OrganisationService();

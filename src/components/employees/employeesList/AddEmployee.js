@@ -25,27 +25,27 @@ const AddEmployee = (props) => {
     const { messageResponse, addEmployee } = props;
 
     const [nameValue, setNameValue] = React.useState("");
-    const [organisationIdValue, setOrganisationIdValue] = React.useState("");
-    const [supervisorIdValue, setSupervisorIdValue] = React.useState("");
+    const [organisationNameValue, setOrganisationNameValue] = React.useState("");
+    const [supervisorNameValue, setSupervisorNameValue] = React.useState("");
     const classes = useDefaultStyles();
 
     const handleName = (event) => {
         setNameValue(event.target.value);
     };
 
-    const handleOrganisationId = (event) => {
-        setOrganisationIdValue(event.target.value);
+    const handleOrganisationName = (event) => {
+        setOrganisationNameValue(event.target.value);
     };
 
-    const handleSupervisorId = (event) => {
-        setSupervisorIdValue(event.target.value);
+    const handleSupervisorName = (event) => {
+        setSupervisorNameValue(event.target.value);
     };
 
     const handleCreateButton = () => {
         addEmployee({
             name: nameValue,
-            organisationId: organisationIdValue,
-            supervisorId: supervisorIdValue
+            organisationName: organisationNameValue,
+            supervisorName: supervisorNameValue
         });
     };
 
@@ -65,24 +65,26 @@ const AddEmployee = (props) => {
                                        value={nameValue}
                                        variant="outlined"
                                        fullWidth
+                                       required
+                                       className={classes.textfield}
                             />
                         </Grid>
                         <Grid item>
-                            <TextField id="organisationId"
-                                       label="Id организации"
+                            <TextField id="organisationName"
+                                       label="Название организации"
                                        type="text"
-                                       onChange={handleOrganisationId}
-                                       value={organisationIdValue}
+                                       onChange={handleOrganisationName}
+                                       value={organisationNameValue}
                                        variant="outlined"
                                        fullWidth
                             />
                         </Grid>
                         <Grid item>
-                            <TextField id="supervisorId"
+                            <TextField id="supervisorName"
                                        label="Id руководителя"
                                        type="text"
-                                       onChange={handleSupervisorId}
-                                       defaultValue={supervisorIdValue}
+                                       onChange={handleSupervisorName}
+                                       defaultValue={supervisorNameValue}
                                        variant="outlined"
                                        fullWidth
                             />

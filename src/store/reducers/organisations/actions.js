@@ -1,5 +1,5 @@
 import OrganisationService from "../../../services/OrganisationService";
-import {setMessageResponse, setOrganisations} from "./types";
+import {setMessageResponse, setOrganisations, setOrganisationsLoading, setOrganisationsTree} from "./types";
 
 export function loadOrganisations() {
     return async function (dispatch) {
@@ -38,5 +38,18 @@ export function deleteOrganisation(id) {
 export function resetMessageResponse() {
     return function (dispatch) {
         dispatch(setMessageResponse(""));
+    }
+}
+
+export function loadOrganisationsTree() {
+    return async function (dispatch) {
+        const response = await OrganisationService.getOrganisationsTree();
+        dispatch(setOrganisationsTree(response.data));
+    }
+}
+
+export function resetOrganisationsLoading() {
+    return async function (dispatch) {
+        dispatch(setOrganisationsLoading(true));
     }
 }

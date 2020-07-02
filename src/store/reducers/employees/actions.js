@@ -1,5 +1,5 @@
 import EmployeeService from "../../../services/EmployeeService";
-import {setEmployees, setMessageResponse} from "./types";
+import {setEmployees, setEmployeesLoading, setEmployeesTree, setMessageResponse} from "./types";
 
 export function loadEmployees() {
     return async function (dispatch) {
@@ -38,5 +38,18 @@ export function deleteEmployee(id) {
 export function resetMessageResponse() {
     return function (dispatch) {
         dispatch(setMessageResponse(""));
+    }
+}
+
+export function loadEmployeesTree(id) {
+    return async function (dispatch) {
+        const response = await EmployeeService.getEmployeesTree(id);
+        dispatch(setEmployeesTree(response.data));
+    }
+}
+
+export function resetEmployeesLoading() {
+    return async function (dispatch) {
+        dispatch(setEmployeesLoading(true));
     }
 }

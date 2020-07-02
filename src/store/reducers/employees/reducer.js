@@ -1,8 +1,9 @@
-import {EXAMPLE_TYPE, SET_EMPLOYEES, SET_MESSAGE_RESPONCE} from "./types";
+import {EXAMPLE_TYPE, SET_EMPLOYEES, SET_EMPLOYEES_LOADING, SET_EMPLOYEES_TREE, SET_MESSAGE_RESPONSE} from "./types";
 
 const initialState = {
-    isLoading: true,
+    isEmployeesLoading: true,
     employees: [],
+    employeesTree: [],
     messageResponse: "",
 };
 
@@ -15,13 +16,24 @@ export default (state = initialState, action) => {
         case SET_EMPLOYEES:
             return {
                 ...state,
-                isLoading: false,
+                isEmployeesLoading: false,
                 employees: action.payload
             };
-        case SET_MESSAGE_RESPONCE:
+        case SET_EMPLOYEES_TREE:
+            return {
+                ...state,
+                isEmployeesLoading: false,
+                employeesTree: action.payload
+            };
+        case SET_MESSAGE_RESPONSE:
             return {
                 ...state,
                 messageResponse: action.payload
+            };
+        case SET_EMPLOYEES_LOADING:
+            return {
+                ...state,
+                isEmployeesLoading: action.payload
             };
         default:
             return state;
